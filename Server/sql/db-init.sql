@@ -1,4 +1,4 @@
-create database crowdfund;
+create database cf;
 
 
 -- pass je admin
