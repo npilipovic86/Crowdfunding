@@ -1,7 +1,7 @@
 <form class="add-message" (ngSubmit)="addChatItem()">
     <div class="form-group">
         <label>Message</label>
-        <textarea name="message" class="form-control" [(ngModel)]="chatText"></textarea>
+        <textarea name="message" class="form-control" [(ngModel)]="chatText" maxlength="255"></textarea>
     </div>
     <div class="pull-right">
         <input type="submit" class="btn btn-primary" value="Add comment" />
@@ -13,8 +13,7 @@
 <div>
     <div *ngIf="chatItems">
         <div *ngFor="let item of chatItems">
-            <p class="bg-success">{{item.message}}</p>
-            <!-- <p>{{item.date}}</p> -->
+            <p class="bg-success col-xs-12">{{item.message}}</p>
         </div>
     </div>
 </div>

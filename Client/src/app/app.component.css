@@ -1,8 +1,21 @@
-ul .active a{
-    border-right: 2px solid #333;
+ul .active a {
+    /* border: 2px solid #333; */
+    /* padding-top: 35% */
 }
 
-ul .active a:hover{
-    color: white;
-    background-color: #333;
+ul .active a:hover {
+    color: rgb(22, 99, 172);
+    background-color: rgb(50, 174, 231);
+}
+
+.navbar {
+    background-color: #e3f2fd;
+}
+
+h4 {
+    font-family: cursive
+}
+
+.text {
+    margin-left: 15px
 }

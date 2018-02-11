@@ -12,7 +12,7 @@ export class ChatItemComponent implements OnInit {
 
   private chatText: string;
   private id: number;
-  private chatItems : ChatItem[];
+  private chatItems: ChatItem[];
   private chatToAdd: ChatItem = {
     message: ''
   }
@@ -23,13 +23,12 @@ export class ChatItemComponent implements OnInit {
     this.loadData();
   }
 
-  loadData(){
+  loadData() {
     this.route.params.subscribe(param => {
       this.id = +param['id'];
       this.http.get(`api/projects/${this.id}/chat`).subscribe(
         (res: any) => {
           this.chatItems = res;
-          console.log(res);
         }
       )
     })
@@ -45,7 +44,7 @@ export class ChatItemComponent implements OnInit {
       })
   }
 
-  resetChatText(){
+  resetChatText() {
     this.chatText = '';
   }
 

@@ -140,7 +140,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "ul .active a{\r\n    border-right: 2px solid #333;\r\n}\r\n\r\nul .active a:hover{\r\n    color: white;\r\n    background-color: #333;\r\n}", ""]);
+exports.push([module.i, "ul .active a {\r\n    /* border: 2px solid #333; */\r\n    /* padding-top: 35% */\r\n}\r\n\r\nul .active a:hover {\r\n    color: rgb(22, 99, 172);\r\n    background-color: rgb(50, 174, 231);\r\n}\r\n\r\n.navbar {\r\n    background-color: #e3f2fd;\r\n}\r\n\r\nh4 {\r\n    font-family: cursive\r\n}\r\n\r\n.text {\r\n    margin-left: 15px\r\n}", ""]);
 
 // exports
 
@@ -153,7 +153,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\r\n    <div class=\"container\">\r\n        <div class=\"navbar-header\">\r\n        </div>\r\n        <div id=\"navbar\" class=\"navbar-collapse collapse\">\r\n            <ul class=\"nav navbar-nav\">\r\n                <li *ngIf=\"!isLoggedIn()\" class=\"active\"><a href=\"login\">Login</a></li>\r\n                <li *ngIf=\"!isLoggedIn()\" class=\"active\"><a href=\"register\">Register</a></li>\r\n                <li *ngIf=\"isLoggedIn()\" class=\"active\"><a href=\"addProject\">New Project</a></li>\r\n                <li>\r\n                    <div>\r\n                        <h4>Crowdfund</h4>\r\n                        <p><em>This is crowdfund app that lets you interact with project owner once you support projects...</em></p>\r\n\r\n                    </div>\r\n                </li>\r\n            </ul>\r\n\r\n\r\n            <ul class=\"nav navbar-nav pull-right\">\r\n                <li *ngIf=\"isLoggedIn()\" class=\"active\"><a (click)=\"logout()\">Logout</a></li>\r\n                <li class=\"active\"><a href=\"main\">Home</a></li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n<div class=\"container theme-showcase\" role=\"main\">\r\n    <!-- <div class=\"jumbotron\">\r\n        <h1>Crowdfund</h1>\r\n        <p>This is crowdfund app that lets you interact with project owner once you support project</p>\r\n    </div> -->\r\n    <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<!-- <nav class=\"navbar navbar-static-top\">\r\n     -->\r\n<nav class=\"navbar navbar-static-top navbar-dark indigo\">\r\n    <div class=\"container navbar navbar-nav\">\r\n        <ul class=\"nav navbar-nav\">\r\n            <li class=\"active\"><a href=\"main\">Home</a></li>\r\n            <li *ngIf=\"!isLoggedIn()\" class=\"active\"><a href=\"login\">Login</a></li>\r\n            <li *ngIf=\"!isLoggedIn()\" class=\"active\"><a href=\"register\">Register</a></li>\r\n            <li *ngIf=\"isLoggedIn()\" class=\"active\"><a href=\"addProject\">New Project</a></li>\r\n            <li class=\"text\">\r\n                <h4>Crowdfunding</h4>\r\n                <p>This is application that lets you interact with project owner, and you can give some money if you like the idea...</p>\r\n            </li>\r\n        </ul>\r\n        <ul class=\"nav navbar-nav pull-right\">\r\n            <li *ngIf=\"isLoggedIn()\" class=\"active\"><a (click)=\"logout()\">Logout</a></li>\r\n            <!-- <li class=\"active\"><a href=\"main\">Home</a></li> -->\r\n        </ul>\r\n    </div>\r\n</nav>\r\n<div class=\"container theme-showcase\" role=\"main\">\r\n    <router-outlet></router-outlet>\r\n</div>\r\n<footer class=\" navbar-fixed-bottom\">\r\n    Copyright &copy; <span id=\"copyright\">2017</span> Tim4\r\n</footer>"
 
 /***/ }),
 
@@ -323,7 +323,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".bg-success{\r\n    display: block;\r\n    height: 30px;\r\n    padding: 5px;\r\n}\r\n\r\n.btn{\r\n    margin-bottom: 15px; \r\n}", ""]);
+exports.push([module.i, ".bg-success {\r\n    display: block;\r\n    /* height: 30px; */\r\n    padding: 5px;\r\n}\r\n\r\n.btn {\r\n    margin-bottom: 15px;\r\n}", ""]);
 
 // exports
 
@@ -336,7 +336,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/chat-item/chat-item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"add-message\" (ngSubmit)=\"addChatItem()\">\r\n    <div class=\"form-group\">\r\n        <label>Message</label>\r\n        <textarea name=\"message\" class=\"form-control\" [(ngModel)]=\"chatText\"></textarea>\r\n    </div>\r\n    <div class=\"pull-right\">\r\n        <input type=\"submit\" class=\"btn btn-primary\" value=\"Add comment\" />\r\n    </div>\r\n</form>\r\n<br/>\r\n\r\n<br/>\r\n<div>\r\n    <div *ngIf=\"chatItems\">\r\n        <div *ngFor=\"let item of chatItems\">\r\n            <p class=\"bg-success\">{{item.message}}</p>\r\n            <!-- <p>{{item.date}}</p> -->\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<form class=\"add-message\" (ngSubmit)=\"addChatItem()\">\r\n    <div class=\"form-group\">\r\n        <label>Message</label>\r\n        <textarea name=\"message\" class=\"form-control\" [(ngModel)]=\"chatText\" maxlength=\"255\"></textarea>\r\n    </div>\r\n    <div class=\"pull-right\">\r\n        <input type=\"submit\" class=\"btn btn-primary\" value=\"Add comment\" />\r\n    </div>\r\n</form>\r\n<br/>\r\n\r\n<br/>\r\n<div>\r\n    <div *ngIf=\"chatItems\">\r\n        <div *ngFor=\"let item of chatItems\">\r\n            <p class=\"bg-success col-xs-12\">{{item.message}}</p>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -377,7 +377,6 @@ var ChatItemComponent = (function () {
             _this.id = +param['id'];
             _this.http.get("api/projects/" + _this.id + "/chat").subscribe(function (res) {
                 _this.chatItems = res;
-                console.log(res);
             });
         });
     };
@@ -429,7 +428,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\"> \r\n  <div class=\"row\"> \r\n    <div class=\"col-md-3\"></div> \r\n    <div class=\"col-md-6\"> \r\n      <form class=\"form-signin\" (ngSubmit)=\"login()\"> \r\n        <h2 class=\"form-signin-heading\">Please sign in</h2> \r\n        <label for=\"username\" class=\"sr-only\">Username</label> \r\n        <input type=\"text\" id=\"username\" class=\"form-control\" name=\"username\" [(ngModel)]=\"user.username\" placeholder=\"Username\" \r\n          required autofocus> \r\n        <label for=\"inputPassword\" class=\"sr-only\">Password</label> \r\n        <input type=\"password\" id=\"inputPassword\" class=\"form-control\" name=\"username\" [(ngModel)]=\"user.password\" placeholder=\"Password\" \r\n          required> \r\n        <button class=\"btn btn-primary btn-block\" type=\"submit\">Sign in</button> \r\n      </form> \r\n      <div *ngIf=wrongUsernameOrPass class=\"alert alert-warning box-msg\" role=\"alert\"> \r\n        Wrong username or password. \r\n      </div> \r\n    </div> \r\n    <div class=\"col-md-3\"></div> \r\n  </div> \r\n</div>  "
+module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-3\"></div>\r\n        <div class=\"col-md-6\">\r\n            <form class=\"form-signin\" (ngSubmit)=\"login()\">\r\n                <h2 class=\"form-signin-heading\">Please sign in</h2>\r\n                <label for=\"username\" class=\"sr-only\">Username</label>\r\n                <input type=\"text\" id=\"username\" class=\"form-control\" name=\"username\" [(ngModel)]=\"user.username\" placeholder=\"Username\" required autofocus>\r\n                <label for=\"inputPassword\" class=\"sr-only\">Password</label>\r\n                <input type=\"password\" id=\"inputPassword\" class=\"form-control\" name=\"username\" [(ngModel)]=\"user.password\" placeholder=\"Password\" required>\r\n                <button class=\"btn btn-primary btn-block\" type=\"submit\">Sign in</button>\r\n            </form>\r\n            <div *ngIf=\"wrongUsernameOrPass\" class=\"alert alert-warning box-msg\" role=\"alert\">\r\n                Wrong username or password.\r\n            </div>\r\n        </div>\r\n        <div class=\"col-md-3\"></div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 

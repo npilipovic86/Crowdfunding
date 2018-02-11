@@ -1,33 +1,26 @@
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li *ngIf="!isLoggedIn()" class="active"><a href="login">Login</a></li>
-                <li *ngIf="!isLoggedIn()" class="active"><a href="register">Register</a></li>
-                <li *ngIf="isLoggedIn()" class="active"><a href="addProject">New Project</a></li>
-                <li>
-                    <div>
-                        <h4>Crowdfund</h4>
-                        <p><em>This is crowdfund app that lets you interact with project owner once you support projects...</em></p>
-
-                    </div>
-                </li>
-            </ul>
-
-
-            <ul class="nav navbar-nav pull-right">
-                <li *ngIf="isLoggedIn()" class="active"><a (click)="logout()">Logout</a></li>
-                <li class="active"><a href="main">Home</a></li>
-            </ul>
-        </div>
+<!-- <nav class="navbar navbar-static-top">
+     -->
+<nav class="navbar navbar-static-top navbar-dark indigo">
+    <div class="container navbar navbar-nav">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="main">Home</a></li>
+            <li *ngIf="!isLoggedIn()" class="active"><a href="login">Login</a></li>
+            <li *ngIf="!isLoggedIn()" class="active"><a href="register">Register</a></li>
+            <li *ngIf="isLoggedIn()" class="active"><a href="addProject">New Project</a></li>
+            <li class="text">
+                <h4>Crowdfunding</h4>
+                <p>This is application that lets you interact with project owner, and you can give some money if you like the idea...</p>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li *ngIf="isLoggedIn()" class="active"><a (click)="logout()">Logout</a></li>
+            <!-- <li class="active"><a href="main">Home</a></li> -->
+        </ul>
     </div>
 </nav>
 <div class="container theme-showcase" role="main">
-    <!-- <div class="jumbotron">
-        <h1>Crowdfund</h1>
-        <p>This is crowdfund app that lets you interact with project owner once you support project</p>
-    </div> -->
     <router-outlet></router-outlet>
 </div>
+<footer class=" navbar-fixed-bottom">
+    Copyright &copy; <span id="copyright">2017</span> Tim4
+</footer>
