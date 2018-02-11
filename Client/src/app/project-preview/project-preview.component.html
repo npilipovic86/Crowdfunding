@@ -1,0 +1,29 @@
+<div class="container">
+    <div *ngIf="project">
+
+        <img class="img-rounded" [src]="project.image">
+        <h1>{{project.name}}</h1>
+        <h3>Category: {{project.category}}</h3>
+        <h5>About: {{project.about}}</h5>
+        <p>Start date:{{project.createDateTime | date : "MM/dd/yyyy HH:mm"}}</p>
+        <h4>Goal: {{project.goal}} €</h4>
+        <p>Collected: {{project.raised}} €</p>
+
+
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" [style.width]="project.percentage + '%'" [attr.aria-valuenow]="project.raised" aria-valuemin="0" [attr.aria-valuemax]="project.goal">
+            </div>
+        </div>
+        <div class="alert">
+            <div *ngIf="goalComplited" class="alert alert-success" role="alert"> Goal successful, thank you!!!
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Amount</label>
+            <input min="1" type="number" oninput="validity.valid||(value='');" name=" amount " class="form-control " [(ngModel)]="amount " placeholder="Help us, donate some money here,and click on button " />
+        </div>
+        <button [disabled]="!amount " (click)="updateRaised() " (click)="reset() " class="btn btn-success ">Donate</button>
+        <br/>
+        <app-chat-item></app-chat-item>
+    </div>
+</div>

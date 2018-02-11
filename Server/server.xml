@@ -1,0 +1,8 @@
+      
+  <Host appBase="webapps"
+           autoDeploy="false" name="localhost" unpackWARs="true"
+           xmlNamespaceAware="false" xmlValidation="false">
+    
+    <Context docBase="/data" path="/static" />
+
+  </Host>

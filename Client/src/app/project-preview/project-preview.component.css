@@ -1,0 +1,12 @@
+img {
+    max-width: 300px;
+    height: 300px;
+    float: right;
+    margin: 2%;
+}
+
+.alert {
+    float: center;
+    /* border: width border-style color; */
+    max-width: 83%;
+}

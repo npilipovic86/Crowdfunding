@@ -1,0 +1,18 @@
+ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+img {
+    max-width: 300px;
+    height: 300px;
+}
+
+
+/* p {
+    margin: 2%;
+} */
+
+.card-body {
+    margin: 2%;
+}

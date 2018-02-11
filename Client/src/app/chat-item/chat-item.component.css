@@ -1,0 +1,9 @@
+.bg-success{
+    display: block;
+    height: 30px;
+    padding: 5px;
+}
+
+.btn{
+    margin-bottom: 15px; 
+}

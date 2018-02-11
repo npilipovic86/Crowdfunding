@@ -1,0 +1,17 @@
+<div class="card  col-md-4">
+
+    <div class="card-body">
+        <div *ngIf="project.image">
+            <img [src]="project.image" class="img-thumbnail">
+        </div>
+
+        <h4 class="card-title">{{project.name}}</h4>
+        <ul>
+            <li>Category: {{project.category}}</li>
+            <li>Goal: {{project.goal}}</li>
+            <li>Raised: {{project.raised}}</li>
+            <p>About: {{project.about}}</p>
+        </ul>
+        <a [routerLink]="['/project/', project.id]" class="btn btn-primary">View project</a>
+        <button *ngIf="isAdmin()" class="btn btn-danger" (click)="delete(project)">Delete</button>
+    </div>
