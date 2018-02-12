@@ -9,5 +9,5 @@ MySQL, Java, Node.js, Angular5
 check username and password in [file](https://github.com/npilipovic86/Crowdfunding/blob/master/Server/src/main/resources/application.properties))
 2. Start server
 3. Run sql [script](https://github.com/npilipovic86/Crowdfunding/blob/master/Server/sql/db-init.sql)
-4. Open browser on localhost:8080
+4. Open browser on [localhost:8080]
 
